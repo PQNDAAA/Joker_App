@@ -1,0 +1,11 @@
+<ion-card class="card">
+  <img class="publicationImage" [src]=joker.image alt="JOKER"/>
+  <ion-card-header>
+  </ion-card-header>
+  <ion-card-content>
+  <p id="description">{{joker.descrption}}</p>
+    <ion-button color="success" (click)="onAddNumber()">{{ likeTextStatus }}</ion-button>
+    <p>{{joker.likeCount}}</p>
+    <p>{{joker.createdDate}}</p>
+  </ion-card-content>
+</ion-card>

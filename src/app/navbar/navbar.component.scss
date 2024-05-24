@@ -1,0 +1,18 @@
+ion-menu::part(backdrop) {
+  background-color: rgba(67, 59, 67, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(46, 38, 46, 0.18);
+}
+.nav{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+

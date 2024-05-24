@@ -1,0 +1,32 @@
+<ion-menu contentId="main-content">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img class="title-image" src="/assets/icon/transparant.jpg" alt="JOKER"/>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-content class="ion-padding">
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <ion-icon aria-hidden="true" name="home" slot="start"></ion-icon>
+      <a class="nav-link" [routerLink]="['/home']">HOME</a>
+    </ul>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        <img class="title-image" src="/assets/icon/transparant.jpg" alt="JOKER"/>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</div>

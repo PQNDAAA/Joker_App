@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild, Input  } from '@angular/core';
 import { JokerModel} from "../joker/models/joker.model";
+import { ModalController} from "@ionic/angular";
+import { PublicationPopupComponent } from "../publication-popup/publication-popup.component";
+import { HomeService} from "./services/home.service";
+
 
 @Component({
   selector: 'app-home',
@@ -8,12 +12,15 @@ import { JokerModel} from "../joker/models/joker.model";
 })
 export class HomePage {
 
-  myJoker: JokerModel[] = [];
-  createModel(){
-    this.myJoker.push(new JokerModel('Joker is the best social media',
-      "https://www.silicon.fr/wp-content/uploads/2021/09/AdobeStock_91595358-684x513.jpeg",
-      new Date(),
-      this.getRandomInt(0,100)));
+  constructor(private mc:ModalController, private hs : HomeService) {}
+
+  myJoker: JokerModel[] = this.hs.joker;
+
+  async openModal(){
+    const modal = await this.mc.create(
+      {component : PublicationPopupComponent}
+    )
+    return await modal.present();
   }
 
   private getRandomInt(min: number, max: number) {

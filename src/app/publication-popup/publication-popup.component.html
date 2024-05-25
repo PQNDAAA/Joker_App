@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      CREATE YOUR PUBLICATION
+    </ion-title>
+    <ion-button (click)="closePopup()" shape="round" color="primary"><ion-icon slot="icon-only" ios="close" md="close"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-fab vertical="bottom" horizontal="right" slot="fixed">
+  <ion-fab-button (click)="addPhotoToGallery()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-textarea class="textAreaDescription" label="Description" labelPlacement="stacked" placeholder="Write your description" [(ngModel)]="textareavalue"></ion-textarea>
+<ion-button (click)="addModal()" class="createButton">CREATE</ion-button>
+

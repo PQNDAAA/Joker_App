@@ -1,4 +1,6 @@
 <app-joker *ngFor="let myJ of myJoker; let i = index" [joker]="myJoker[i]"></app-joker>
-<ion-button (click)="createModel()" shape="round" color="success" class="fixedButtonScrolling">
-    <ion-icon slot="icon-only" ios="add" md="add"></ion-icon>
- </ion-button>
+<ion-fab>
+  <ion-fab-button (click)="openModal()" color="success">
+    <ion-icon ios="add" md="add" name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

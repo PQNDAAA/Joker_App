@@ -5,6 +5,7 @@ import {JokerModel} from "../joker/models/joker.model";
 import {HomeService} from "../home/services/home.service";
 import {FormsModule} from "@angular/forms";
 import {PhotoService} from "../services/photo.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-publication-popup',
@@ -12,7 +13,8 @@ import {PhotoService} from "../services/photo.service";
   styleUrls: ['./publication-popup.component.scss'],
   imports: [
     IonicModule,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   standalone: true
 })
@@ -20,18 +22,22 @@ export class PublicationPopupComponent {
 
   constructor(private mc: ModalController, private hs: HomeService, public ps: PhotoService) { }
 
-  textareavalue!: string;
+  textAreaDescriptionValue!: string;
+  textAreaNameValue!:string;
+  index = this.hs.GetModalIndex();
 
   closePopup(){
     this.mc.dismiss();
   }
   addModal(){
-    this.hs.SetJokerModal(new JokerModel(this.textareavalue,
-      "https://www.silicon.fr/wp-content/uploads/2021/09/AdobeStock_91595358-684x513.jpeg",
+    this.hs.SetJokerModal(new JokerModel(this.textAreaNameValue,this.textAreaDescriptionValue,
+      "https://picsum.photos/80/80?random=" + (this.hs.GetModalIndex() - 1),
       new Date(),
       0));
     console.log("publication added!");
     this.closePopup();
+    console.log(this.hs.GetModalIndex() - 1 );
+    console.log(this.hs.GetModalIndex());
   }
   addPhotoToGallery(){
     this.ps.addNewToGallery();

@@ -1,10 +1,16 @@
 <ion-card class="card">
   <ion-card-header>
+    <ion-button size="small" class="avatarButton" color="medium" (click)="openModal()">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head"  [src]="joker.image" />
+      </ion-avatar>
+    </ion-button>
+    <ion-title>{{joker.name}}</ion-title>
   </ion-card-header>
   <ion-card-content>
   <p id="description">{{joker.descrption}}</p>
     <ion-button color="success" (click)="onAddNumber()">{{ likeTextStatus }}</ion-button>
-    <p>{{joker.likeCount}}</p>
-    <p>{{joker.createdDate}}</p>
+    <h2>{{joker.likeCount}}</h2>
+    <h3>{{joker.createdDate}}</h3>
   </ion-card-content>
 </ion-card>

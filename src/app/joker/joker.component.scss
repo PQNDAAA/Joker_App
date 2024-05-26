@@ -1,8 +1,19 @@
-#description{
-  font-size: 20px;
-}
 #date{
   text-align: center;
+}
+.avatarButton{
+  left: 1.5%;
+  top: 10%;
+  z-index: 1000;
+  position: absolute;
+}
+ion-avatar{
+  max-width: 100%;
+  height: auto;
+  opacity: 100%;
+}
+ion-title{
+  font-weight: bold;
 }
 .publicationImage{
   height: auto;

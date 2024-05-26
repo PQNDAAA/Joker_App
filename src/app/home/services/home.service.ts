@@ -11,4 +11,8 @@ export class HomeService {
   SetJokerModal(joker : JokerModel) {
     this.joker.unshift(joker);
   }
+
+  GetModalIndex(){
+   return this.joker.length;
+  }
 }

@@ -1,18 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      CREATE YOUR PUBLICATION
-    </ion-title>
-    <ion-button (click)="closePopup()" shape="round" color="primary"><ion-icon slot="icon-only" ios="close" md="close"></ion-icon></ion-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePopup()" class="closeButton">Cancel</ion-button>
+    </ion-buttons>
+      <ion-title>CREATE A PUBLICATION</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addModal()" class="closeButton" [strong]="true" [disabled]="textareaDescription.invalid || textAreaName.invalid">Confirm</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-textarea class="textAreaDescription" label="Description" labelPlacement="stacked" placeholder="Write your description" [(ngModel)]="textAreaDescriptionValue" required #textareaDescription=ngModel></ion-textarea>
+    <div *ngIf="textareaDescription.invalid && textareaDescription.touched" class="error-message">
+      Ce champ est obligatoire.
+    </div>
+  </ion-item>
+  <ion-item>
+<ion-input label="Publication Name" labelPlacement="stacked" placeholder="Write the name" [(ngModel)]="textAreaNameValue" required #textAreaName=ngModel></ion-input>
+    <div *ngIf="textAreaName.invalid && textAreaName.touched" class="error-message">
+      Ce champ est obligatoire.
+    </div>
+  </ion-item>
+</ion-content>
 
 <ion-fab vertical="bottom" horizontal="right" slot="fixed">
   <ion-fab-button (click)="addPhotoToGallery()">
     <ion-icon name="camera"></ion-icon>
   </ion-fab-button>
 </ion-fab>
-
-<ion-textarea class="textAreaDescription" label="Description" labelPlacement="stacked" placeholder="Write your description" [(ngModel)]="textareavalue"></ion-textarea>
-<ion-button (click)="addModal()" class="createButton">CREATE</ion-button>
 

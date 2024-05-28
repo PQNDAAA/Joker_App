@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { JokerComponent } from './joker/joker.component';
 import { NavbarComponent} from "./navbar/navbar.component";
 import {UserprofileComponent} from "./userprofile/userprofile.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent,UserprofileComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, JokerComponent, NavbarComponent,],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, JokerComponent, NavbarComponent, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

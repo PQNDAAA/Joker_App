@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" ios="close" md="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      SIGN IN PAGE
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addUser()">
+        CONFIRM
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+  <ion-input label="Email" labelPlacement="stacked" placeholder="johnsmith@gmail.com" [(ngModel)]="newUser.email"></ion-input>
+  </ion-item>
+    <ion-item>
+  <ion-input label="Last Name" labelPlacement="stacked" placeholder="Smith" [(ngModel)]="newUser.lastname"></ion-input>
+    </ion-item>
+      <ion-item>
+  <ion-input label="First Name" labelPlacement="stacked" placeholder="John" [(ngModel)]="newUser.firstName"></ion-input>
+      </ion-item>
+</ion-content>
